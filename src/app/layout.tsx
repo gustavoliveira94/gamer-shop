@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Archivo } from 'next/font/google'
+import { NuqsAdapter } from 'nuqs/adapters/next/app'
 
 import { Header } from '@/presentation/components'
 
@@ -21,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={archivo.className}>
         <Header />
-        {children}
+        <NuqsAdapter>{children}</NuqsAdapter>
       </body>
     </html>
   )
