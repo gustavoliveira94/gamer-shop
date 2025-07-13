@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { Archivo } from 'next/font/google'
+
+import { Header } from '@/presentation/components'
+
 import './globals.css'
-import { Header } from '@/components'
 
 const archivo = Archivo({ subsets: ['latin'] })
 

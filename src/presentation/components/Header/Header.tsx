@@ -1,12 +1,13 @@
 import Link from 'next/link'
+
 import { CartIcon } from './assets/CartIcon'
 
 export const Header: React.FC = () => {
   return (
-    <header className="bg-secondary">
-      <div className="flex items-center justify-between p-4 max-w-7xl mx-auto">
+    <header className="bg-secondary sticky top-0 z-50">
+      <div className="flex items-center justify-between max-w-7xl mx-auto">
         <Link href="/">
-          <h2 className="text-cta-primary font-bold text-[24px]">GamerShop</h2>
+          <h1 className="text-cta-primary font-bold text-[24px]">GamerShop</h1>
         </Link>
         <Link href="/cart" data-testid="cart">
           <CartIcon />
