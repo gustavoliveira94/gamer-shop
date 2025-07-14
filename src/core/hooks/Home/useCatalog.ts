@@ -1,7 +1,7 @@
-import { useQueryState } from 'nuqs'
 import useSWRInfinite from 'swr/infinite'
 
 import { getCatalog } from '@/core/services/getCatalog'
+import { useQueryState } from '../useQueryState'
 
 export const useCatalog = () => {
   const [genre] = useQueryState('genre')
@@ -21,16 +21,17 @@ export const useCatalog = () => {
   )
 
   const mergedCatalogs = data?.flatMap((page) => page.games) || []
+  const catalog = data
+    ? { ...data[data.length - 1], games: mergedCatalogs }
+    : {
+        games: [],
+        availableFilters: [],
+        totalPages: 0,
+        currentPage: 1,
+      }
 
   return {
-    data: data
-      ? { ...data[data.length - 1], games: mergedCatalogs }
-      : {
-          games: [],
-          availableFilters: [],
-          totalPages: 0,
-          currentPage: 1,
-        },
+    data: catalog,
     isLoading: isLoading && size === 1,
     setPage: setSize,
     genre,
