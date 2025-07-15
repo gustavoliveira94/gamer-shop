@@ -1,10 +1,8 @@
-import { SWRConfig } from 'swr'
-import { unstable_serialize } from 'swr/infinite'
-
 import { getCatalog } from '@/core/services/getCatalog'
 import { Catalog } from './components/Catalog/Catalog'
 import { Header } from './components/Header/Header'
 import { globalSearchParams as searchParamsCache } from '@/core/utils/globalSearchParams'
+import { withHomeConfig } from '@/core/HOCs/Home/withHomeConfig'
 
 interface HomeProps {
   searchParams: {
@@ -12,7 +10,7 @@ interface HomeProps {
   }
 }
 
-export const Home: React.FC<HomeProps> = async (props) => {
+export const Home: React.FC<HomeProps> = withHomeConfig(async (props) => {
   const searchParams = props?.searchParams
   const { genre } = searchParamsCache.parse(searchParams)
 
@@ -21,15 +19,7 @@ export const Home: React.FC<HomeProps> = async (props) => {
   return (
     <main className="w-full flex flex-col flex-1 max-w-7xl mx-auto">
       <Header availableFilters={catalog.availableFilters || []} />
-      <SWRConfig
-        value={{
-          fallback: {
-            [unstable_serialize((index) => ['/api/games', genre, index + 1])]: [catalog],
-          },
-        }}
-      >
-        <Catalog />
-      </SWRConfig>
+      <Catalog />
     </main>
   )
-}
+})
