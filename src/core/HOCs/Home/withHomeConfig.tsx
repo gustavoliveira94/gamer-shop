@@ -26,7 +26,15 @@ export function withHomeConfig(Component: React.ComponentType<HomeProps>) {
     }
 
     return (
-      <SWRConfig value={{ fallback }}>
+      <SWRConfig
+        value={{
+          fallback,
+          dedupingInterval: 0,
+          revalidateOnMount: false,
+          revalidateOnFocus: false,
+          revalidateOnReconnect: false,
+        }}
+      >
         <Component {...componentProps} />
       </SWRConfig>
     )

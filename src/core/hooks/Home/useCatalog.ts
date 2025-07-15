@@ -12,11 +12,7 @@ export const useCatalog = () => {
     },
     ([, genre, page]) => getCatalog({ genre, page }),
     {
-      dedupingInterval: 0,
-      revalidateOnMount: false,
       initialSize: 1,
-      revalidateOnFocus: false,
-      revalidateOnReconnect: false,
     }
   )
 

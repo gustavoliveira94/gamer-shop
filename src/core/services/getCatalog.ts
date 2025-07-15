@@ -1,5 +1,6 @@
 'use server'
 
+import { constants } from '../utils/constants'
 import { Game } from '../utils/endpoint'
 
 export interface ICatalogReturn {
@@ -19,7 +20,7 @@ export const getCatalog = async ({ genre, page = 1 }: ICatalogParams): Promise<I
   const pageParam = `&page=${page}`
 
   try {
-    const res = await fetch(`http://localhost:3000/api/games?${genreParam}${pageParam}`, {
+    const res = await fetch(`${constants.API_URL}/games?${genreParam}${pageParam}`, {
       cache: 'no-store',
     })
 
