@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/react'
 
-import { render } from '@/config/tests/helpers'
+import { render } from '@/configs/tests/helpers'
 
 import { Card } from '../Card'
 import { Game } from '@/core/utils/endpoint'
@@ -12,6 +12,10 @@ const game = {
   price: 59.99,
   image: '/test-game.jpg',
 } as Game
+
+beforeEach(() => {
+  localStorage.clear()
+})
 
 describe('Testing <Card />', () => {
   it('should render the card with game details', () => {
@@ -25,14 +29,11 @@ describe('Testing <Card />', () => {
   it('should call addToCart when the button is clicked', () => {
     const { getByText } = render(<Card game={game} />)
 
-    const buttonFn = jest.fn()
-
     const button = getByText('ADD TO CART')
-    button.onclick = buttonFn
 
     fireEvent.click(button)
 
-    expect(buttonFn).toHaveBeenCalled()
+    expect(getByText('Game successfully added')).toBeInTheDocument()
   })
   it('should display truncated game name if it exceeds 20 characters', () => {
     const longGameName = {

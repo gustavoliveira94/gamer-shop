@@ -1,4 +1,4 @@
-import { render } from '@/config/tests/helpers'
+import { render } from '@/configs/tests/helpers'
 
 import { Catalog } from '../Catalog'
 import { allGames } from '@/core/utils/endpoint'

@@ -32,7 +32,7 @@ export const Catalog: React.FC = () => {
       </div>
       {data.currentPage < data.totalPages ? (
         <button
-          className="w-[100%] w-[137px] h-[56px] bg-cta-primary rounded-2xl text-white font-bold text-base ml-[24px] lg:m-0"
+          className="w-[100%] w-[137px] h-[56px] bg-cta-primary rounded-2xl text-white font-bold text-base ml-[24px] lg:m-0 disabled:opacity-50 disabled:cursor-not-allowed"
           onClick={() => setPage((prev) => prev + 1)}
           disabled={isLoadingMore}
         >

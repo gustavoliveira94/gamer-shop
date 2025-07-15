@@ -1,3 +1,5 @@
+'use server'
+
 import { Game } from '../utils/endpoint'
 
 export interface ICatalogReturn {

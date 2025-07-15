@@ -1,5 +1,4 @@
-import { atom } from 'jotai'
-
+import { atomWithStorage } from 'jotai/utils'
 import { Game } from '../utils/endpoint'
 
-export const cartAtom = atom<Game[]>([])
+export const cartAtom = atomWithStorage<Game[]>('cart', [])

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Archivo } from 'next/font/google'
 
-import { Providers } from '@/core/Providers'
+import { Providers } from '@/core/providers'
 import { Header } from '@/presentation/components'
 
 import './globals.css'
