@@ -3,10 +3,11 @@ import Link from 'next/link'
 import { ArrowLeftIcon } from './assets/ArrowLeftIcon'
 import { Items } from './components/Items/Items'
 import { OrderSummary } from './components/OrderSummary/OrderSummary'
+import { MiddlewareNotFoundError } from 'next/dist/shared/lib/utils'
 
 export const Cart: React.FC = () => {
   return (
-    <div className="flex flex-col max-w-7xl mx-auto pr-[24px] pl-[24px] xl:p-0">
+    <main className="w-full flex flex-col max-w-7xl mx-auto pr-[24px] pl-[24px] xl:p-0">
       <div className="h-[72px] flex items-center">
         <Link href="/" className="weight-500 flex items-center gap-2">
           <ArrowLeftIcon />
@@ -17,6 +18,6 @@ export const Cart: React.FC = () => {
         <Items />
         <OrderSummary />
       </div>
-    </div>
+    </main>
   )
 }

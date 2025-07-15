@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Archivo } from 'next/font/google'
 
 import { Providers } from '@/core/providers'
-import { Header } from '@/presentation/components'
+import { Footer, Header } from '@/presentation/components'
 
 import './globals.css'
 
@@ -19,12 +19,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={archivo.className}>
+    <html lang="en" className="h-full">
+      <body className={`${archivo.className} min-h-screen flex flex-col`}>
         <Providers>
           <Header />
           {children}
         </Providers>
+        <Footer />
       </body>
     </html>
   )

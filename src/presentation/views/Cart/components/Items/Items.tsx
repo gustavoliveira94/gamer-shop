@@ -40,7 +40,7 @@ export const Items: React.FC = () => {
             </div>
           ))
         ) : (
-          <Loading />
+          <Loading height="h-[200px]" />
         )}
       </div>
     </div>
