@@ -17,6 +17,8 @@ export const useAddToCart = () => {
       return
     }
 
+    toast({ message: 'Game successfully added', type: 'success' })
+
     setCart((prevCart) => [...prevCart, game])
   }
 

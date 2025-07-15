@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/dom'
 
-import { render } from '@/config/tests/helpers'
+import { render } from '@/configs/tests/helpers'
 
 import { Header } from '../Header'
 import { availableFilters as availableFiltersMock } from '@/core/utils/endpoint'

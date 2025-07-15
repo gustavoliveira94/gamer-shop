@@ -1,4 +1,4 @@
-import { render } from '@/config/tests/helpers'
+import { render } from '@/configs/tests/helpers'
 
 import { Home } from '../Home'
 import { allGames, availableFilters } from '@/core/utils/endpoint'

@@ -1,4 +1,5 @@
 import { SWRConfig } from 'swr'
+import { unstable_serialize } from 'swr/infinite'
 
 import { getCatalog } from '@/core/services/getCatalog'
 import { Catalog } from './components/Catalog/Catalog'
@@ -20,7 +21,13 @@ export const Home: React.FC<HomeProps> = async (props) => {
   return (
     <div className="flex flex-col max-w-7xl mx-auto">
       <Header availableFilters={catalog.availableFilters || []} />
-      <SWRConfig value={{ fallback: { '/api/games': catalog }, fallbackData: [catalog] }}>
+      <SWRConfig
+        value={{
+          fallback: {
+            [unstable_serialize((index) => ['/api/games', genre, index + 1])]: [catalog],
+          },
+        }}
+      >
         <Catalog />
       </SWRConfig>
     </div>

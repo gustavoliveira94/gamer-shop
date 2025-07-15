@@ -18,7 +18,7 @@ export const Card: React.FC<CardProps> = ({ game }) => {
       {game.isNew ? (
         <small
           data-testid="new"
-          className="absolute top-[48px] left-[48px] w-[57px] h-[32px] bg-primary rounded-[4px] flex justify-center items-center weight-400 text-base"
+          className="absolute top-[36px] left-[36px] w-[57px] h-[32px] bg-primary rounded-[4px] flex justify-center items-center weight-400 text-base"
         >
           NEW
         </small>

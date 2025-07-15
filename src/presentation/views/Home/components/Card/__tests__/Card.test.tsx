@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/react'
 
-import { render } from '@/config/tests/helpers'
+import { render } from '@/configs/tests/helpers'
 
 import { Card } from '../Card'
 import { Game } from '@/core/utils/endpoint'
