@@ -29,7 +29,7 @@ export const OrderSummary: React.FC = () => {
               </li>
             ))
           ) : (
-            <Loading />
+            <Loading height="h-[150px]" />
           )}
         </ul>
         <div className="flex justify-between items-center mt-[16px]">

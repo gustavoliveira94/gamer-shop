@@ -19,7 +19,7 @@ export const Home: React.FC<HomeProps> = async (props) => {
   const catalog = await getCatalog({ genre })
 
   return (
-    <div className="flex flex-col max-w-7xl mx-auto">
+    <main className="w-full flex flex-col flex-1 max-w-7xl mx-auto">
       <Header availableFilters={catalog.availableFilters || []} />
       <SWRConfig
         value={{
@@ -30,6 +30,6 @@ export const Home: React.FC<HomeProps> = async (props) => {
       >
         <Catalog />
       </SWRConfig>
-    </div>
+    </main>
   )
 }
