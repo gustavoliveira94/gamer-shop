@@ -11,10 +11,6 @@ const customJestConfig = {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^nuqs/server$': '<rootDir>/__mocks__/nuqs.ts',
   },
-  extensionsToTreatAsEsm: ['.ts', '.tsx'],
-  transform: {
-    '^.+\\.(ts|tsx)$': ['ts-jest', { useESM: true }],
-  },
 }
 
 module.exports = createJestConfig(customJestConfig)
