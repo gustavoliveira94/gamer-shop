@@ -4,14 +4,15 @@ import { unstable_serialize } from 'swr/infinite'
 import { getCatalog } from '@/core/services/getCatalog'
 import { globalSearchParams as searchParamsCache } from '@/core/utils/globalSearchParams'
 
-interface IHomeConfig {
+export interface HomeProps {
   searchParams: {
     genre?: string
   }
+  availableFilters: string[]
 }
 
-export function withHomeConfig(Component: React.ComponentType<IHomeConfig>) {
-  return async (props: IHomeConfig) => {
+export function withHomeConfig(Component: React.ComponentType<HomeProps>) {
+  return async (props: HomeProps) => {
     const { genre } = searchParamsCache.parse(props.searchParams)
     const catalog = await getCatalog({ genre })
 
@@ -19,9 +20,14 @@ export function withHomeConfig(Component: React.ComponentType<IHomeConfig>) {
       [unstable_serialize((index) => ['/api/games', genre, index + 1])]: [catalog],
     }
 
+    const componentProps = {
+      ...props,
+      availableFilters: catalog.availableFilters,
+    }
+
     return (
       <SWRConfig value={{ fallback }}>
-        <Component {...props} />
+        <Component {...componentProps} />
       </SWRConfig>
     )
   }
