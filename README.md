@@ -55,6 +55,6 @@ yarn test
 
 ## 📄 Notes
 
-SWR client hydration from server is handled using fallback.
-Jotai is used for state management with localStorage persistence for the cart.
+SWR client hydration from server is handled using fallback. <br/>
+Jotai is used for state management with localStorage persistence for the cart. <br/>
 Custom hooks to separate the UI from the logic.
