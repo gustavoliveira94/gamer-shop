@@ -8,7 +8,7 @@ export interface HomeProps {
   searchParams: {
     genre?: string
   }
-  availableFilters: string[]
+  availableFilters?: string[]
 }
 
 export function withHomeConfig(Component: React.ComponentType<HomeProps>) {
