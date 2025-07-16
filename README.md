@@ -53,7 +53,7 @@ Run all tests with:
 yarn test
 ```
 
-## 🧪 ENV
+## 📒 ENV
 
 Create a .env in the source:
 
