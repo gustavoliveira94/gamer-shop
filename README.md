@@ -53,6 +53,14 @@ Run all tests with:
 yarn test
 ```
 
+## 🧪 ENV
+
+Create a .env in the source:
+
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+```
+
 ## 📄 Notes
 
 SWR client hydration from server is handled using fallback. <br/>
