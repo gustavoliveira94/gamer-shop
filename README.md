@@ -1,7 +1,61 @@
-# Frontend Technical Test
+# 🎮 Game Catalog App
 
-Welcome to the Frontend Technical Test! This test is designed to assess your knowledge and skills in frontend development.
+A modern web application built with **Next.js**, **Tailwind CSS**, **Jotai**, and **SWR**, allowing users to browse and interact with a game catalog.
 
-The detailed instructions and requirements for this test are defined in the [`CHALLENGE.md`](/CHALLENGE.md) file. Please read it carefully before you start.
+## 📁 Project Structure
 
-Good luck!
+/
+├── **mocks** # Test mocks  
+├── public # Static assets (images, icons, etc.)  
+├── src  
+│ ├── app # Next.js App Router structure (layouts, pages, routes)  
+│ ├── core # Application logic (API services, providers, HOCs, atoms, hooks, utils)  
+│ ├── presentation # UI components (views, components)  
+│ └── configs # Project-level configurations (tests, etc.)  
+├── .env # Environment variables  
+├── .eslintrc.json # ESLint configuration  
+├── .gitignore # Files ignored by Git  
+├── .prettierrc # Prettier code formatter configuration  
+├── CHALLENGE.md # Original challenge instructions  
+├── jest.config.ts # Jest configuration file  
+├── next.config.mjs # Next.js configuration  
+├── package.json # Project metadata and scripts  
+├── package-lock.json # Dependency lockfile  
+├── postcss.config.js # PostCSS configuration  
+├── tailwind.config.ts # Tailwind CSS configuration  
+├── tsconfig.json # TypeScript configuration  
+└── README.md # Project overview and structure
+
+## ⚙️ Tech Stack
+
+- [Next.js (App Router)](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Jotai](https://jotai.org/)
+- [SWR](https://swr.vercel.app/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/)
+
+## 📦 Scripts
+
+```bash
+yarn install       # Install dependencies
+yarn run dev       # Start development server
+yarn run build     # Build the app for production
+yarn run lint      # Run linter checks
+yarn test          # Run unit/integration tests
+```
+
+## 🧪 Tests
+
+Run all tests with:
+
+```bash
+yarn test
+```
+
+## 📄 Notes
+
+SWR client hydration from server is handled using fallback.
+Jotai is used for state management with localStorage persistence for the cart.
+Custom hooks to separate the UI from the logic.
