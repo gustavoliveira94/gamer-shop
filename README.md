@@ -4,7 +4,6 @@ A modern web application built with **Next.js**, **Tailwind CSS**, **Jotai**, an
 
 ## 📁 Project Structure
 
-/
 ├── **mocks** # Test mocks  
 ├── public # Static assets (images, icons, etc.)  
 ├── src  
